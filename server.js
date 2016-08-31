@@ -6,13 +6,13 @@ var application = express();
 var port = process.env.PORT || 7010;
 
 //Making express to look in the public directory for (css, js, html .....).
-app.use(express.static(__dirname + '/public'));
+application.use(express.static(__dirname + '/public'));
 
 //Setting the home page
-app.get('/', function(request, response){
+application.get('/', function(request, response){
 	res.render('index');
 });
 
-app.listen(port, function(){
+application.listen(port, function(){
 	console.log('App is running on port: ' + port);
 });
